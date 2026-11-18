@@ -1,0 +1,5 @@
+node_modules
+.aegisflow
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm

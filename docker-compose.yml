@@ -1,0 +1,14 @@
+services:
+  aegisflow:
+    build: .
+    ports:
+      - "127.0.0.1:4318:4318"
+    environment:
+      AEGISFLOW_HOST: 0.0.0.0
+      AEGISFLOW_PORT: 4318
+      AEGISFLOW_UPSTREAM_URL: ${AEGISFLOW_UPSTREAM_URL:-https://api.openai.com}
+      AEGISFLOW_API_KEY: ${AEGISFLOW_API_KEY:-}
+    volumes:
+      - aegisflow-data:/app/.aegisflow
+volumes:
+  aegisflow-data:

@@ -1,0 +1,13 @@
+# Local and self-hosted contribution policies
+reviews:
+  auto_review:
+    enabled: true
+  profile: chill
+  request_changes_workflow: false
+  path_instructions:
+    - path: "apps/proxy/**"
+      instructions: |
+        Review proxy and guardrail changes for SSRF (upstream destinations must be trusted configuration, never request-controlled), unsafe URL parsing, credential leakage, SQL injection (parameterize all queries), and unbounded memory or hanging clients in SSE streams. Check cancellation, backpressure, response limits, and database cleanup. Require focused unit tests for security-sensitive behavior.
+    - path: "**"
+      instructions: |
+        Check strict typing, error handling, secret handling, and tests for new behavior. Do not claim that heuristic prompt-injection checks are comprehensive security controls.

@@ -1,0 +1,9 @@
+{
+  "name": "@aegisflow/cli",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": { "aegisflow": "dist/index.js" },
+  "scripts": { "build": "tsc -p tsconfig.json", "typecheck": "tsc --noEmit -p tsconfig.json" },
+  "devDependencies": { "@types/node": "^22.13.4", "typescript": "^5.7.3" }
+}
